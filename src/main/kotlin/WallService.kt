@@ -1,4 +1,4 @@
-class WallService() {
+object WallService {
     private var posts = emptyArray<Post>()
     private var lastID = 10
 

@@ -1,5 +1,5 @@
 fun main() {
-    val wallService = WallService()
+    val wallService = WallService
     var postOne = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 11, text = "PostOne", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", signerId = 0, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
     postOne = wallService.add(postOne)
     var postTwo = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 20, text = "PostTwo", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", signerId = 0, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
