@@ -1,5 +1,21 @@
 import java.time.LocalDate
 
-class Link (type: String, id: Int, ownerId: Int, date: LocalDate, title: String, val url: String, val description: String):
-    Attachment ("Link", id = id, ownerId = ownerId, date = date, title = title) {
+class Link(
+    val id: Int, //Идентификатор аудиозаписи
+    val ownerId: Int, //Идентификатор владельца аудиозаписи
+    val date: LocalDate, //Дата комапазиции
+    val title: String, //Название композиции
+    val url: String, //Ссылка
+    val description: String, //Описание ссылки
+    ) : Attachment {
+    override val type: String
+    get() = "Link"
+    override val objects: Link
+    get() = Link(id = id, ownerId = ownerId, date = date, title = title, url = url, description = description)
 }
+
+
+
+
+
+

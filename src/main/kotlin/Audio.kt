@@ -1,6 +1,15 @@
 import java.time.LocalDate
 
-class Audio (type: String, id: Int, ownerId: Int, date: LocalDate, title: String, val audioTime: Int, val artist: String):
-    Attachment ("Audio", id = id, ownerId = ownerId, date = date, title = title) {
-
+class Audio(
+    val id: Int, //Идентификатор аудиозаписи
+    val ownerId: Int, //Идентификатор владельца аудиозаписи
+    val date: LocalDate, //Дата комапазиции
+    val title: String, //Название композиции
+    val audioTime: Int, //Длительность аудиозаписи в секундах
+    val artist: String, //Имя артиста
+) : Attachment {
+    override val type: String
+        get() = "Audio"
+    override val objects: Audio
+        get() = Audio(id = id, ownerId = ownerId, date = date, title = title, audioTime = audioTime, artist = artist)
 }
