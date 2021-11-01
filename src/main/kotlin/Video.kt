@@ -10,6 +10,5 @@ class Video(
 ) : Attachment {
     override val type: String
         get() = "Video"
-    override val objects: Video
-        get() = Video(id = id, ownerId = ownerId, date = date, title = title, videoTime = videoTime, description = description)
+    val video : Video = Video(id = id, ownerId = ownerId, date = date, title = title, videoTime = videoTime, description = description)
 }

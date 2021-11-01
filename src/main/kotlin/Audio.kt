@@ -7,9 +7,9 @@ class Audio(
     val title: String, //Название композиции
     val audioTime: Int, //Длительность аудиозаписи в секундах
     val artist: String, //Имя артиста
+
 ) : Attachment {
     override val type: String
         get() = "Audio"
-    override val objects: Audio
-        get() = Audio(id = id, ownerId = ownerId, date = date, title = title, audioTime = audioTime, artist = artist)
+    val audio : Audio = Audio(id = id, ownerId = ownerId, date = date, title = title, audioTime = audioTime, artist = artist)
 }

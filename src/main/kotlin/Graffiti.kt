@@ -11,8 +11,7 @@ class Graffiti (
 ) : Attachment {
     override val type: String
         get() = "Graffiti"
-    override val objects: Graffiti
-        get() = Graffiti(id = id, ownerId = ownerId, date = date, title = title, length = length, width = width, artist = artist)
+    val graffiti: Graffiti = Graffiti(id = id, ownerId = ownerId, date = date, title = title, length = length, width = width, artist = artist)
 }
 
 

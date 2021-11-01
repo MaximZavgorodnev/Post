@@ -10,8 +10,7 @@ class Link(
     ) : Attachment {
     override val type: String
     get() = "Link"
-    override val objects: Link
-    get() = Link(id = id, ownerId = ownerId, date = date, title = title, url = url, description = description)
+    val link: Link = Link(id = id, ownerId = ownerId, date = date, title = title, url = url, description = description)
 }
 
 

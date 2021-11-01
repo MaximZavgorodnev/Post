@@ -11,6 +11,5 @@ class Photo(
 ) : Attachment {
     override val type: String
         get() = "Photo"
-    override val objects: Photo
-        get() = Photo(id = id, ownerId = ownerId, date = date, title = title, length = length, width = width, description = description)
+    val photo: Photo = Photo(id = id, ownerId = ownerId, date = date, title = title, length = length, width = width, description = description)
 }
