@@ -1,3 +1,4 @@
+import java.util.*
 
 fun main() {
     val wallService = WallService
@@ -20,5 +21,19 @@ fun main() {
         println("Пост откорректирован")
     } else{
         println("Такого поста нет")
+    }
+
+    //Добавление и обработка комментариев
+    val commentOne = Comment(id = 11, fromId = 0, date = 1, text = "Комментакрий к посту №1", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
+    val commentTwo = Comment(id = 10, fromId = 0, date = 1, text = "Комментакрий к посту №2", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
+    val commentThree = Comment(id = 87, fromId = 0, date = 1, text = "Комментакрий к посту №3", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
+
+    try {
+        if (!wallService.createComment(commentOne)) throw Exception("there is no such comment")
+        if (!wallService.createComment(commentTwo)) throw Exception("there is no such comment")
+        if (!wallService.createComment(commentThree)) throw Exception("there is no such comment")
+    }
+    catch (e: Exception){
+        println(e.message)
     }
 }

@@ -1,7 +1,7 @@
 object WallService {
     private var posts = emptyArray<Post>()
     private var lastID = 10
-
+    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         val postNew = post.copy(id = lastID)
@@ -19,4 +19,19 @@ object WallService {
         }
         return false
     }
+
+
+    fun createComment(comment: Comment) : Boolean {
+        posts.forEachIndexed { index, com ->
+            if (posts[index].id == comment.id) {
+                comments += comment
+                println()
+                println("Комментарий добавлен")
+                println(comment.text)
+                return true
+            }
+        }
+        return false
+    }
+
 }
