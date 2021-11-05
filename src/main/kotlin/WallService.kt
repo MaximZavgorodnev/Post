@@ -33,5 +33,4 @@ object WallService {
         }
         return false
     }
-
 }
