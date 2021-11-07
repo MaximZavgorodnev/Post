@@ -17,6 +17,7 @@ data class Post(
     val views: Objects?,
     val postType: String,
     val postSource:Objects?,
+    val attachment: Array<Attachment>?,
     val geo: Objects?,
     val signerId: Int,
     val copyHistory: Objects?,
@@ -30,6 +31,6 @@ data class Post(
     val postponedId: Int) {
 
     fun toCreatePost() {
-        val postNull = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 0, text = "PostNull", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", postSource = null, geo = null , signerId = 0, copyHistory = null, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
+        val postNull = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 0, text = "PostNull", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", postSource = null,  attachment = null, geo = null , signerId = 0, copyHistory = null, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
     }
 }

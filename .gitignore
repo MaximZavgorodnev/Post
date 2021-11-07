@@ -3,6 +3,7 @@ Thumbs.db*
 HELP.md
 .gradle
 build/
+*.DS_Store
 
 ### STS ###
 .apt_generated
@@ -43,3 +44,8 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+
+src/main/.DS_Store
+src/main/kotlin/.DS_Store
+src/test/.DS_Store
+src/test/kotlin/.DS_Store
