@@ -1,12 +1,13 @@
 object WallService {
     private var posts = emptyArray<Post>()
     private var lastID = 10
-    private var comments = emptyArray<Comment>()
+    var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         val postNew = post.copy(id = lastID)
         posts += postNew
         lastID++
+        println("Пост добавлен")
         return posts.last()
     }
 
@@ -21,16 +22,21 @@ object WallService {
     }
 
 
-    fun createComment(comment: Comment) : Boolean {
-        posts.forEachIndexed { index, com ->
-            if (posts[index].id == comment.id) {
-                comments += comment
-                println()
-                println("Комментарий добавлен")
-                println(comment.text)
-                return true
+    fun createComment(comment: Comment) {
+//        try {
+            posts.forEachIndexed { index, com ->
+                if (posts[index].id == comment.id) {
+                    comments += comment
+                    println()
+                    println("Комментарий добавлен")
+                    return
+                }
             }
+            println()
+            throw PostNotFoundException("there is no such comment")
         }
-        return false
-    }
+//        catch (e: Exception) {
+//            println(e.message)
+
+
 }

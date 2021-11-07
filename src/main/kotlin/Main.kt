@@ -1,5 +1,4 @@
 import java.lang.RuntimeException
-import java.util.*
 
 class PostNotFoundException(message : String) : RuntimeException(message)
 
@@ -31,12 +30,8 @@ fun main() {
     val commentTwo = Comment(id = 10, fromId = 0, date = 1, text = "Комментакрий к посту №2", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
     val commentThree = Comment(id = 87, fromId = 0, date = 1, text = "Комментакрий к посту №3", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
 
-    try {
-        if (!wallService.createComment(commentOne)) throw PostNotFoundException("there is no such comment")
-        if (!wallService.createComment(commentTwo)) throw PostNotFoundException("there is no such comment")
-        if (!wallService.createComment(commentThree)) throw PostNotFoundException("there is no such comment")
-    }
-    catch (e: Exception){
-        println(e.message)
-    }
+    wallService.createComment(commentOne)
+    wallService.createComment(commentTwo)
+    wallService.createComment(commentThree)
+
 }

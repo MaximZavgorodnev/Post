@@ -1,8 +1,5 @@
-
 import org.junit.Test
-
 import org.junit.Assert.*
-
 class WallServiceTest {
 
     @Test
@@ -60,7 +57,10 @@ class WallServiceTest {
         var post = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 11, text = "PostOne", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", postSource = null, attachment = null, geo = null , signerId = 0, copyHistory = null, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
         service.add(post)
         val commentTwo = Comment(id = 10, fromId = 0, date = 1, text = "Комментакрий к посту №2", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
-        assertTrue(service.createComment(commentTwo))
+        service.createComment(commentTwo)
+        assertFalse(service.comments.isEmpty())
+
+
     }
 
     @Test(expected = PostNotFoundException::class)
@@ -69,7 +69,7 @@ class WallServiceTest {
         var post = Post(id = 0, ownerId = 0, fromId = 1, created_by = 0, date = 11, text = "PostOne", replyOwnerId = 0, replyPostId = 0, friendsOnly = true, comments = null, copyright = null, like = null, repost = null, views = null, postType = "тип", postSource = null, attachment = null, geo = null , signerId = 0, copyHistory = null, canPin = true, canDelete = true, canEdit = false, isPinned = true, markedAsAds = false, isFavorite = true, donut = null, postponedId = 0)
         service.add(post)
         val commentTwo = Comment(id = 90, fromId = 0, date = 1, text = "Комментакрий к посту №2", donut = null, relYToUser = 0, replyToComment = 0, attachments = null, parentsStack = arrayOf(), thread = null)
-        if (!service.createComment(commentTwo)) throw PostNotFoundException("there is no such comment")
+        val s = service.createComment(commentTwo)
     }
 
 
